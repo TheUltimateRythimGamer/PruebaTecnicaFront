@@ -1,0 +1,14 @@
+.general {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 30px;
+}
+
+img.redimension {
+    max-width: 10%;
+    max-height: 10%;
+}
+
+.img-container {
+    text-align: center;
+}

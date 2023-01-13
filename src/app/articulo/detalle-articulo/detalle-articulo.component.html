@@ -1,0 +1,77 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="timer" [fullScreen]="true">
+    <p style="color: white">Guardando...</p>
+</ngx-spinner>
+
+<div class="general">
+    <h2 style="color: black;">Detalle Articulo - Tienda </h2>
+    <div class="row">
+        <form [formGroup]="formDetalle" class="m-form m-form--fit m-form--label-align-left">
+            <div class="form-group m-form__group row" style="padding-left:0px">
+                <div class="col-lg-4">
+                    <label for="TxtCodigo">Codigo</label>
+                    <input type="text" class="form-control m-input" id="TxtCodigo" formControlName="TxtCodigo" required>
+                    <div *ngIf="TxtCodigo?.invalid && (TxtCodigo?.dirty || TxtCodigo?.touched)"
+                        class="alert alert-danger mt-1">
+                        <div *ngIf="TxtCodigo?.errors?.['required']">
+                            El codigo es requerido
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <label for="TxtDescripcion">Descripción</label>
+                    <input type="text" class="form-control m-input" id="TxtDescripcion"
+                        formControlName="TxtDescripcion">
+                    <div *ngIf="TxtDescripcion?.invalid && (TxtDescripcion?.dirty || TxtDescripcion?.touched)"
+                        class="alert alert-danger mt-1">
+                        <div *ngIf="TxtDescripcion?.errors?.['required']">
+                            La descripción es requerida
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <label for="TxtPrecio">Precio</label>
+                    <input type="number" class="form-control m-input" id="TxtPrecio" formControlName="TxtPrecio">
+                    <div *ngIf="TxtPrecio?.invalid && (TxtPrecio?.dirty || TxtPrecio?.touched)"
+                        class="alert alert-danger mt-1">
+                        <div *ngIf="TxtPrecio?.errors?.['required']">
+                            El precio es requerida
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group m-form__group row" style="padding-left:0px">
+                <div class="col-lg-4">
+                    <label for="TxtImagen">Url Imagen</label>
+                    <input type="text" class="form-control m-input" id="TxtImagen" formControlName="TxtImagen" required>
+                    <div *ngIf="TxtImagen?.invalid && (TxtImagen?.dirty || TxtImagen?.touched)"
+                        class="alert alert-danger mt-1">
+                        <div *ngIf="TxtImagen?.errors?.['required']">
+                            La imagen es necesaria
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <label for="TxtStock">Stock</label>
+                    <input type="number" class="form-control m-input" id="TxtStock" formControlName="TxtStock" required>
+                    <div *ngIf="TxtStock?.invalid && (TxtStock?.dirty || TxtStock?.touched)"
+                        class="alert alert-danger mt-1">
+                        <div *ngIf="TxtStock?.errors?.['required']">
+                            El stock es necesario
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group m-form__group row" style="padding-left:0px">
+                <div class="col-lg-6">
+                    <button class="btn btn-success btn-lg btn-block" style="margin-top: 25px; width: 100%;"
+                        (click)="Guardar()">Guardar</button>
+                </div>
+                <div class="col-lg-6">
+                    <button class="btn btn-danger btn-lg btn-block" style="margin-top: 25px; width: 100%;"
+                        (click)="Cancelar()">Cancelar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

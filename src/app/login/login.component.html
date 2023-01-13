@@ -1,0 +1,36 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="timer" [fullScreen]="true">
+    <p style="color: white">Cargando...</p>
+</ngx-spinner>
+
+<div class="general">
+    <h2 style="color: black;">Login</h2>
+    <form [formGroup]="formDetalle" class="m-form m-form--fit m-form--label-align-left" (ngSubmit)="IniciarSesion()">
+        <!-- Email input -->
+        <div class="form-outline mb-4">
+            <label class="form-label" for="form2Example1">Email address</label>
+
+            <input type="text" class="form-control m-input" id="TxtCorreo" formControlName="TxtCorreo" required>
+            <div *ngIf="TxtCorreo?.invalid && (TxtCorreo?.dirty || TxtCorreo?.touched)" class="alert alert-danger mt-1">
+                <div *ngIf="TxtCorreo?.errors?.['required']">
+                    El correo es requerido
+                </div>
+            </div>
+        </div>
+
+        <!-- Password input -->
+        <div class="form-outline mb-4">
+            <label class="form-label" for="form2Example2">Password</label>
+            <input type="password" class="form-control m-input" id="TxtContrasenia" formControlName="TxtContrasenia">
+            <div *ngIf="TxtContrasenia?.invalid && (TxtContrasenia?.dirty || TxtContrasenia?.touched)"
+                class="alert alert-danger mt-1">
+                <div *ngIf="TxtContrasenia?.errors?.['required']">
+                    La contraseña es requerida
+                </div>
+            </div>
+        </div>
+
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary btn-block mb-4" >Iniciar Sesión</button>
+    </form>
+
+</div>
